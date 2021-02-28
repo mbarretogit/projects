@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="prpfront.ftc.br.BI_ERROR.sa"
+  DTS:DTSID="{8577AC12-6085-4C99-B16B-0645331A2298}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=prpfront.ftc.br;User ID=sa;Initial Catalog=BI_ERROR;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAa4qmWgRJ8UeeyWtvrOSVAAAAAAACAAAAAAAQZgAAAAEAACAAAACUrvCuBCy3tld/c7Sb8VbIXdLCo7VgdZ1RhLwrbGayBAAAAAAOgAAAAAIAACAAAABV/nDRQ88oNcXSQvQDSimDVnM2zyu4OWEqWKVDDxgKsoAAAAAYA2KIq9PO/xpsk4tDRquJmH/BQQi9zslPJhIob30hE/jcDtUtMuSz4tscUIaIoEIdnyG0WcleXU2ZvOKIIQXL90nDeoLVpmpdWxfxZMa5z/fRiZ3+YY6T+HWwB+lzkPeCZz3jZqk++GAdGEgDvNCHJ/4RD7a7VNpz2ZnZMw1uE0AAAAD/wU2Z6JfjNgZwKIGleOdhwMmJuDwxQ5UYY6hrcKDDenTSpXnp9+N2IfRUpKVNpy0aujeFn5JR7tHU402D4Bwx</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

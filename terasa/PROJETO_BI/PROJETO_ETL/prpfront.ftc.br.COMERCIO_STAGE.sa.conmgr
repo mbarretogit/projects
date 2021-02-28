@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="prpfront.ftc.br.COMERCIO_STAGE.sa"
+  DTS:DTSID="{276D3396-A707-4B79-975C-F927572A6503}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=prpfront.ftc.br;User ID=sa;Initial Catalog=COMERCIO_STAGE;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAa4qmWgRJ8UeeyWtvrOSVAAAAAAACAAAAAAAQZgAAAAEAACAAAAC/d0hFIa2UudNYt3j6kIcQf1plUPF0Koh8Dd7fSnbkvwAAAAAOgAAAAAIAACAAAADl1QTEeEyxFU7PUSzY2CkTJknedsLt+liuheh8vK4ezIAAAACJCyEZEezf3kCrD1BBd0vSa3cdLQI9oWmUSeueekERdXugKqVMOzf6yKBHCbyMDGbwfgApvYVu8I3RpbVX/wl1QaHluOcOqO4EWWRf0LbBCsKL/KbkCSzwiaPwSJiIhIxx17+HvUO1aOhF5btVdVxJPoLpFcjNBllF/tgV17ulukAAAADoUjUCPA8KFyKoqnFKxvpk8s62z6jJY7YEUrAJ4QHAL7fY1uGGTLlxyh5fBpCti9nCz/cvkjTG0UsOQtC1PaAT</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
