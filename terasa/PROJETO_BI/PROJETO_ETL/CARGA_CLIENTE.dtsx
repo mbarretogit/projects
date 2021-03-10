@@ -11,10 +11,22 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{6756533E-94E6-41DC-A64B-9484A0B2F3A0}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{92756B98-2156-4050-852B-6E51A46D30B3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[BISERVER.BI_ERROR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{33232886-3D09-4C76-9FC5-6C384E128672}"
+      DTS:ObjectName="BISERVER.BI_ERROR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=BISERVER;Initial Catalog=BI_ERROR;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -1800,7 +1812,7 @@
                     <property
                       dataType="System.String"
                       description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
-                      name="OpenRowset">[dbo].[ER_ENDERECO]</property>
+                      name="OpenRowset">[CLIENTE]</property>
                     <property
                       dataType="System.String"
                       description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
@@ -1843,8 +1855,8 @@
                   <connections>
                     <connection
                       refId="Package\CARGA STAGE\STAGE CLIENTE\LOG DE ERRO.Connections[OleDbConnection]"
-                      connectionManagerID="{8577AC12-6085-4C99-B16B-0645331A2298}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[prpfront.ftc.br.BI_ERROR.sa]"
+                      connectionManagerID="Package.ConnectionManagers[BISERVER.BI_ERROR]"
+                      connectionManagerRefId="Package.ConnectionManagers[BISERVER.BI_ERROR]"
                       description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
                       name="OleDbConnection" />
                   </connections>
@@ -2610,6 +2622,21 @@ where [refTable].[ID_CLIENTE] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="147,42"
+          Id="Package\CARGA DW\CLIENTE DW"
+          TopLeft="80,14" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="276,111"
+          Size="276,154"
+          Id="Package\CARGA DW"
+          TopLeft="467,75" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\CARGA STAGE\STAGE CLIENTE"
+          TopLeft="53,112.5" />
+        <NodeLayout
           Size="156,59"
           Id="Package\CARGA STAGE\TRUNCATE ST_CLIENTE"
           TopLeft="62,9.5" />
@@ -2635,10 +2662,6 @@ where [refTable].[ID_CLIENTE] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\CARGA STAGE\STAGE CLIENTE"
-          TopLeft="53,112.5" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -2646,17 +2669,6 @@ where [refTable].[ID_CLIENTE] = ?</property>
           Size="282,269"
           Id="Package\CARGA STAGE"
           TopLeft="56,67" />
-        <NodeLayout
-          Size="147,42"
-          Id="Package\CARGA DW\CLIENTE DW"
-          TopLeft="80,14" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="276,111"
-          Size="276,154"
-          Id="Package\CARGA DW"
-          TopLeft="467,75" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="338,201.5">
@@ -2694,238 +2706,6 @@ where [refTable].[ID_CLIENTE] = ?</property>
       </GraphLayout>
     </LayoutInfo>
   </Package>
-  <TaskHost
-    design-time-name="Package\CARGA STAGE\STAGE CLIENTE">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="125,42"
-          Id="Package\CARGA STAGE\STAGE CLIENTE\CLIENTE"
-          TopLeft="30,76" />
-        <NodeLayout
-          Size="173,42"
-          Id="Package\CARGA STAGE\STAGE CLIENTE\REQUISITOS MKT"
-          TopLeft="195,76" />
-        <EdgeLayout
-          Id="Package\CARGA STAGE\STAGE CLIENTE.Paths[Saída de Origem OLE DB]"
-          TopLeft="155,97">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="40,0"
-              Start="0,0"
-              End="32.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="32.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="199,42"
-          Id="Package\CARGA STAGE\STAGE CLIENTE\PROCURA ENDERECO"
-          TopLeft="395,79" />
-        <EdgeLayout
-          Id="Package\CARGA STAGE\STAGE CLIENTE.Paths[Saída de Coluna Derivada]"
-          TopLeft="368,98.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="27,0"
-              Start="0,0"
-              End="19.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="19.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="182,42"
-          Id="Package\CARGA STAGE\STAGE CLIENTE\Conversão de Dados"
-          TopLeft="415,175" />
-        <EdgeLayout
-          Id="Package\CARGA STAGE\STAGE CLIENTE.Paths[Saída de Correspondência de Pesquisa]"
-          TopLeft="494.5,121">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="11.5,54"
-              Start="0,0"
-              End="11.5,46.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23"
-                    Point2="0,27"
-                    Point3="4,27" />
-                  <mssgle:LineSegment
-                    End="7.5,27" />
-                  <mssgle:CubicBezierSegment
-                    Point1="7.5,27"
-                    Point2="11.5,27"
-                    Point3="11.5,31" />
-                  <mssgle:LineSegment
-                    End="11.5,46.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-79.6240234375,32,170.748046875,12.1953125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="155,42"
-          Id="Package\CARGA STAGE\STAGE CLIENTE\LOG DE ERRO"
-          TopLeft="422.75,11" />
-        <EdgeLayout
-          Id="Package\CARGA STAGE\STAGE CLIENTE.Paths[Saída de Erro de Pesquisa]"
-          TopLeft="497.375,79">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,-26"
-              Start="0,0"
-              End="0,-18.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-18.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-57.7840234375,-15.34765625,115.568046875,12.1953125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="146,42"
-          Id="Package\CARGA STAGE\STAGE CLIENTE\ST_CLIENTE"
-          TopLeft="173,210" />
-        <EdgeLayout
-          Id="Package\CARGA STAGE\STAGE CLIENTE.Paths[Saída de Conversão de Dados]"
-          TopLeft="415,196">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-96,35"
-              Start="0,0"
-              End="-88.5,35">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-44,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-44,0"
-                    Point2="-48,0"
-                    Point3="-48,4" />
-                  <mssgle:LineSegment
-                    End="-48,31" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-48,31"
-                    Point2="-48,35"
-                    Point3="-52,35" />
-                  <mssgle:LineSegment
-                    End="-88.5,35" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\CARGA STAGE\STAGE CLIENTE\PROCURA ENDERECO">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\CARGA STAGE\STAGE CLIENTE\LOG DE ERRO">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\CARGA STAGE\STAGE CLIENTE\ST_CLIENTE">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\CARGA STAGE\STAGE CLIENTE\CLIENTE">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\CARGA DW\CLIENTE DW">
     <LayoutInfo>
@@ -3248,6 +3028,238 @@ where [refTable].[ID_CLIENTE] = ?</property>
   &lt;DateVariable&gt;System::StartTime&lt;/DateVariable&gt;
   &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\CARGA STAGE\STAGE CLIENTE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="199,42"
+          Id="Package\CARGA STAGE\STAGE CLIENTE\PROCURA ENDERECO"
+          TopLeft="395,79" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\CARGA STAGE\STAGE CLIENTE\LOG DE ERRO"
+          TopLeft="422.75,11" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\CARGA STAGE\STAGE CLIENTE\REQUISITOS MKT"
+          TopLeft="195,76" />
+        <NodeLayout
+          Size="146,42"
+          Id="Package\CARGA STAGE\STAGE CLIENTE\ST_CLIENTE"
+          TopLeft="173,210" />
+        <NodeLayout
+          Size="125,42"
+          Id="Package\CARGA STAGE\STAGE CLIENTE\CLIENTE"
+          TopLeft="30,76" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\CARGA STAGE\STAGE CLIENTE\Conversão de Dados"
+          TopLeft="415,175" />
+        <EdgeLayout
+          Id="Package\CARGA STAGE\STAGE CLIENTE.Paths[Saída de Origem OLE DB]"
+          TopLeft="155,97">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="40,0"
+              Start="0,0"
+              End="32.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="32.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CARGA STAGE\STAGE CLIENTE.Paths[Saída de Erro de Pesquisa]"
+          TopLeft="497.375,79">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-26"
+              Start="0,0"
+              End="0,-18.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-18.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-57.7840234375,-15.34765625,115.568046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CARGA STAGE\STAGE CLIENTE.Paths[Saída de Correspondência de Pesquisa]"
+          TopLeft="494.5,121">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11.5,54"
+              Start="0,0"
+              End="11.5,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23"
+                    Point2="0,27"
+                    Point3="4,27" />
+                  <mssgle:LineSegment
+                    End="7.5,27" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.5,27"
+                    Point2="11.5,27"
+                    Point3="11.5,31" />
+                  <mssgle:LineSegment
+                    End="11.5,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-79.6240234375,32,170.748046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CARGA STAGE\STAGE CLIENTE.Paths[Saída de Conversão de Dados]"
+          TopLeft="415,196">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-96,35"
+              Start="0,0"
+              End="-88.5,35">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-44,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-44,0"
+                    Point2="-48,0"
+                    Point3="-48,4" />
+                  <mssgle:LineSegment
+                    End="-48,31" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-48,31"
+                    Point2="-48,35"
+                    Point3="-52,35" />
+                  <mssgle:LineSegment
+                    End="-88.5,35" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\CARGA STAGE\STAGE CLIENTE.Paths[Saída de Coluna Derivada]"
+          TopLeft="368,98.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="27,0"
+              Start="0,0"
+              End="19.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="19.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARGA STAGE\STAGE CLIENTE\PROCURA ENDERECO">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARGA STAGE\STAGE CLIENTE\LOG DE ERRO">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARGA STAGE\STAGE CLIENTE\ST_CLIENTE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARGA STAGE\STAGE CLIENTE\CLIENTE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

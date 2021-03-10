@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{D4376852-4E15-4346-AD2D-CE0D38369B62}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{2B06A503-C343-4620-B256-2543F106A2EA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -664,9 +664,24 @@ FROM FORMA_PAGAMENTO</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="140,42"
+          Id="Package\CARGA DW\FORMA DW"
+          TopLeft="48,31" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="294,125"
+          Size="294,168"
+          Id="Package\CARGA DW"
+          TopLeft="485,39" />
+        <NodeLayout
           Size="159,42"
           Id="Package\CARGA STAGE\STAGE FORMA"
           TopLeft="44,83" />
+        <NodeLayout
+          Size="202,42"
+          Id="Package\CARGA STAGE\TRUNCATE ST_FORMA"
+          TopLeft="16,5" />
         <EdgeLayout
           Id="Package\CARGA STAGE.PrecedenceConstraints[Constraint]"
           TopLeft="120.25,47">
@@ -689,10 +704,6 @@ FROM FORMA_PAGAMENTO</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="202,42"
-          Id="Package\CARGA STAGE\TRUNCATE ST_FORMA"
-          TopLeft="16,5" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -700,43 +711,32 @@ FROM FORMA_PAGAMENTO</property>
           Size="223,222"
           Id="Package\CARGA STAGE"
           TopLeft="75,32" />
-        <NodeLayout
-          Size="140,42"
-          Id="Package\CARGA DW\FORMA DW"
-          TopLeft="48,31" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="294,125"
-          Size="294,168"
-          Id="Package\CARGA DW"
-          TopLeft="388,40" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="298,143">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="90,-19"
+              EndConnector="187,-20"
               Start="0,0"
-              End="82.5,-19">
+              End="179.5,-20">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="41,0" />
+                    End="89.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="41,0"
-                    Point2="45,0"
-                    Point3="45,-4" />
+                    Point1="89.5,0"
+                    Point2="93.5,0"
+                    Point3="93.5,-4" />
                   <mssgle:LineSegment
-                    End="45,-15" />
+                    End="93.5,-16" />
                   <mssgle:CubicBezierSegment
-                    Point1="45,-15"
-                    Point2="45,-19"
-                    Point3="49,-19" />
+                    Point1="93.5,-16"
+                    Point2="93.5,-20"
+                    Point3="97.5,-20" />
                   <mssgle:LineSegment
-                    End="82.5,-19" />
+                    End="179.5,-20" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -748,6 +748,65 @@ FROM FORMA_PAGAMENTO</property>
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\CARGA DW\FORMA DW">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="159,42"
+          Id="Package\CARGA DW\FORMA DW\FORMA STAGE"
+          TopLeft="79,68" />
+        <NodeLayout
+          Size="140,42"
+          Id="Package\CARGA DW\FORMA DW\FORMA DW"
+          TopLeft="332,66" />
+        <EdgeLayout
+          Id="Package\CARGA DW\FORMA DW.Paths[Saída de Origem OLE DB]"
+          TopLeft="238,88">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="94,0"
+              Start="0,0"
+              End="86.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="86.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARGA DW\FORMA DW\FORMA DW">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARGA DW\FORMA DW\FORMA STAGE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\CARGA STAGE\STAGE FORMA">
     <LayoutInfo>
@@ -808,65 +867,6 @@ FROM FORMA_PAGAMENTO</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\CARGA STAGE\STAGE FORMA\ST_FORMA">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\CARGA DW\FORMA DW">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="159,42"
-          Id="Package\CARGA DW\FORMA DW\FORMA STAGE"
-          TopLeft="79,68" />
-        <NodeLayout
-          Size="140,42"
-          Id="Package\CARGA DW\FORMA DW\FORMA DW"
-          TopLeft="332,66" />
-        <EdgeLayout
-          Id="Package\CARGA DW\FORMA DW.Paths[Saída de Origem OLE DB]"
-          TopLeft="238,88">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="94,0"
-              Start="0,0"
-              End="86.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="86.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\CARGA DW\FORMA DW\FORMA STAGE">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\CARGA DW\FORMA DW\FORMA DW">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

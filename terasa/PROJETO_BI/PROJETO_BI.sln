@@ -7,16 +7,47 @@ Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "PROJETO_ETL", "PROJETO_ETL\
 EndProject
 Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "PROJETO_OLAP", "PROJETO_OLAP\PROJETO_OLAP.dwproj", "{2961AB75-89E7-4BDE-A10F-9E01CC42961F}"
 EndProject
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "PROJETO_REPORTS", "PROJETO_REPORTS\PROJETO_REPORTS\PROJETO_REPORTS.rptproj", "{CB7C4C21-8F6D-496E-9390-6333B88BC4A5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
 		Development|Default = Development|Default
+		Release|Default = Release|Default
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B04B3DD2-D33E-4E74-B970-6ACB0F168040}.Debug|Default.ActiveCfg = Development
+		{B04B3DD2-D33E-4E74-B970-6ACB0F168040}.Debug|Default.Build.0 = Development
+		{B04B3DD2-D33E-4E74-B970-6ACB0F168040}.DebugLocal|Default.ActiveCfg = Development
+		{B04B3DD2-D33E-4E74-B970-6ACB0F168040}.DebugLocal|Default.Build.0 = Development
 		{B04B3DD2-D33E-4E74-B970-6ACB0F168040}.Development|Default.ActiveCfg = Development
 		{B04B3DD2-D33E-4E74-B970-6ACB0F168040}.Development|Default.Build.0 = Development
+		{B04B3DD2-D33E-4E74-B970-6ACB0F168040}.Release|Default.ActiveCfg = Development
+		{B04B3DD2-D33E-4E74-B970-6ACB0F168040}.Release|Default.Build.0 = Development
+		{2961AB75-89E7-4BDE-A10F-9E01CC42961F}.Debug|Default.ActiveCfg = Development
+		{2961AB75-89E7-4BDE-A10F-9E01CC42961F}.Debug|Default.Build.0 = Development
+		{2961AB75-89E7-4BDE-A10F-9E01CC42961F}.Debug|Default.Deploy.0 = Development
+		{2961AB75-89E7-4BDE-A10F-9E01CC42961F}.DebugLocal|Default.ActiveCfg = Development
+		{2961AB75-89E7-4BDE-A10F-9E01CC42961F}.DebugLocal|Default.Build.0 = Development
+		{2961AB75-89E7-4BDE-A10F-9E01CC42961F}.DebugLocal|Default.Deploy.0 = Development
 		{2961AB75-89E7-4BDE-A10F-9E01CC42961F}.Development|Default.ActiveCfg = Development
 		{2961AB75-89E7-4BDE-A10F-9E01CC42961F}.Development|Default.Build.0 = Development
 		{2961AB75-89E7-4BDE-A10F-9E01CC42961F}.Development|Default.Deploy.0 = Development
+		{2961AB75-89E7-4BDE-A10F-9E01CC42961F}.Release|Default.ActiveCfg = Development
+		{2961AB75-89E7-4BDE-A10F-9E01CC42961F}.Release|Default.Build.0 = Development
+		{2961AB75-89E7-4BDE-A10F-9E01CC42961F}.Release|Default.Deploy.0 = Development
+		{CB7C4C21-8F6D-496E-9390-6333B88BC4A5}.Debug|Default.ActiveCfg = Debug
+		{CB7C4C21-8F6D-496E-9390-6333B88BC4A5}.Debug|Default.Build.0 = Debug
+		{CB7C4C21-8F6D-496E-9390-6333B88BC4A5}.Debug|Default.Deploy.0 = Debug
+		{CB7C4C21-8F6D-496E-9390-6333B88BC4A5}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{CB7C4C21-8F6D-496E-9390-6333B88BC4A5}.DebugLocal|Default.Build.0 = DebugLocal
+		{CB7C4C21-8F6D-496E-9390-6333B88BC4A5}.Development|Default.ActiveCfg = Debug
+		{CB7C4C21-8F6D-496E-9390-6333B88BC4A5}.Development|Default.Build.0 = Debug
+		{CB7C4C21-8F6D-496E-9390-6333B88BC4A5}.Development|Default.Deploy.0 = Debug
+		{CB7C4C21-8F6D-496E-9390-6333B88BC4A5}.Release|Default.ActiveCfg = Release
+		{CB7C4C21-8F6D-496E-9390-6333B88BC4A5}.Release|Default.Build.0 = Release
+		{CB7C4C21-8F6D-496E-9390-6333B88BC4A5}.Release|Default.Deploy.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
