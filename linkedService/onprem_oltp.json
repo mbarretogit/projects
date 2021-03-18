@@ -5,8 +5,8 @@
 		"annotations": [],
 		"type": "SqlServer",
 		"typeProperties": {
-			"connectionString": "integrated security=False;data source=C255-005012-BDB;initial catalog=LYCEUM;user id=miguelbarreto",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIxN2Q1ODAzNS00YTEzLTRmZGYtYTc0Ny0yNTgxMzMwZTE5YTgiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"connectionString": "integrated security=False;data source=C255-005012-BDB;initial catalog=FTC_DATAMART;user id=miguelbarreto",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIyMTRiYTE1OS1jNTc4LTQ3ZmUtODJmZC0zMzlmNTI2MDYxNjkiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "onprem-biserver",
