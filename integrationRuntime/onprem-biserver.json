@@ -1,0 +1,7 @@
+{
+	"name": "onprem-biserver",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "Integration Runtime do Servidor de BI"
+	}
+}
