@@ -1,19 +1,19 @@
 {
-	"name": "dsOnPremMatricula",
+	"name": "dsAzureMatricula",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "onprem_oltp",
+			"referenceName": "output_azuresql",
 			"type": "LinkedServiceReference"
 		},
 		"folder": {
 			"name": "Staging Area"
 		},
 		"annotations": [],
-		"type": "SqlServerTable",
+		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "BI_REMATRICULA"
+			"table": "BI_MATRICULAS"
 		}
 	}
 }
