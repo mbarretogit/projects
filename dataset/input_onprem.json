@@ -1,0 +1,19 @@
+{
+	"name": "input_onprem",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "onprem_oltp",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Staging Area"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "BI_REMATRICULA"
+		}
+	}
+}
