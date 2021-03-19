@@ -1,0 +1,12 @@
+{
+	"name": "output_azuresql",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=dbserver-datawarehouse.database.windows.net;initial catalog=STAGING_AREA;user id=dbserveradmin",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkFERi1EVy1HRVNUQU9BTFVOT1NfNjc2ZTA0NDctMThlNS00NDE4LWJlY2ItMGRhNmJhMzU2Y2YwIg0KfQ=="
+		}
+	}
+}
