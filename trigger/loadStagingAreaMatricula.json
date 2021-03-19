@@ -1,0 +1,29 @@
+{
+	"name": "loadStagingAreaMatricula",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pipeline1",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2021-03-19T02:00:00",
+				"timeZone": "E. South America Standard Time",
+				"schedule": {
+					"hours": [
+						12
+					]
+				}
+			}
+		}
+	}
+}
