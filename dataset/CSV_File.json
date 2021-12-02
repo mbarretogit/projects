@@ -1,0 +1,164 @@
+{
+	"name": "CSV_File",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ETL_Demo_LS_BlobStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "vaccination_covid_salvador.csv",
+				"container": "container"
+			},
+			"columnDelimiter": ";",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "document_id",
+				"type": "String"
+			},
+			{
+				"name": "paciente_id",
+				"type": "String"
+			},
+			{
+				"name": "paciente_idade",
+				"type": "String"
+			},
+			{
+				"name": "paciente_datanascimento",
+				"type": "String"
+			},
+			{
+				"name": "paciente_enumsexobiologico",
+				"type": "String"
+			},
+			{
+				"name": "paciente_racacor_codigo",
+				"type": "String"
+			},
+			{
+				"name": "paciente_racacor_valor",
+				"type": "String"
+			},
+			{
+				"name": "paciente_endereco_coibgemunicipio",
+				"type": "String"
+			},
+			{
+				"name": "paciente_endereco_copais",
+				"type": "String"
+			},
+			{
+				"name": "paciente_endereco_nmmunicipio",
+				"type": "String"
+			},
+			{
+				"name": "paciente_endereco_nmpais",
+				"type": "String"
+			},
+			{
+				"name": "paciente_endereco_uf",
+				"type": "String"
+			},
+			{
+				"name": "paciente_endereco_cep",
+				"type": "String"
+			},
+			{
+				"name": "paciente_nacionalidade_enumnacionalidade",
+				"type": "String"
+			},
+			{
+				"name": "estabelecimento_valor",
+				"type": "String"
+			},
+			{
+				"name": "estabelecimento_razaosocial",
+				"type": "String"
+			},
+			{
+				"name": "estalecimento_nofantasia",
+				"type": "String"
+			},
+			{
+				"name": "estabelecimento_municipio_codigo",
+				"type": "String"
+			},
+			{
+				"name": "estabelecimento_municipio_nome",
+				"type": "String"
+			},
+			{
+				"name": "estabelecimento_uf",
+				"type": "String"
+			},
+			{
+				"name": "vacina_grupoatendimento_codigo",
+				"type": "String"
+			},
+			{
+				"name": "vacina_grupoatendimento_nome",
+				"type": "String"
+			},
+			{
+				"name": "vacina_categoria_codigo",
+				"type": "String"
+			},
+			{
+				"name": "vacina_categoria_nome",
+				"type": "String"
+			},
+			{
+				"name": "vacina_lote",
+				"type": "String"
+			},
+			{
+				"name": "vacina_fabricante_nome",
+				"type": "String"
+			},
+			{
+				"name": "vacina_fabricante_referencia",
+				"type": "String"
+			},
+			{
+				"name": "vacina_dataaplicacao",
+				"type": "String"
+			},
+			{
+				"name": "vacina_descricao_dose",
+				"type": "String"
+			},
+			{
+				"name": "vacina_codigo",
+				"type": "String"
+			},
+			{
+				"name": "vacina_nome",
+				"type": "String"
+			},
+			{
+				"name": "sistema_origem",
+				"type": "String"
+			},
+			{
+				"name": "data_importacao_rnds",
+				"type": "String"
+			},
+			{
+				"name": "id_sistema_origem",
+				"type": "String"
+			},
+			{
+				"name": "vacina_numdose",
+				"type": "String"
+			}
+		]
+	}
+}
