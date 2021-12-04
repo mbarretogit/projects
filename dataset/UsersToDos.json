@@ -1,0 +1,16 @@
+{
+	"name": "UsersToDos",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "RestAPI",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"entity": "todos"
+			}
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

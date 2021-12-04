@@ -1,0 +1,9 @@
+{
+	"name": "etl-demo-adf",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "83964b45-a429-41c4-b19f-38c5b314dc62",
+		"tenantId": "a4ab4139-8b60-4701-87ec-f8687ce31332"
+	}
+}

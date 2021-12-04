@@ -1,0 +1,16 @@
+{
+	"name": "Users",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "RestAPI",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"entity": "users"
+			}
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

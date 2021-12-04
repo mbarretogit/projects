@@ -1,0 +1,36 @@
+{
+	"name": "SQL_DB_Users_Posts",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "OutputDB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "userId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "title",
+				"type": "varchar"
+			},
+			{
+				"name": "body",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "UsersPosts"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

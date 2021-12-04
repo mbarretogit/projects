@@ -1,0 +1,43 @@
+{
+	"name": "RUN_ALL_PIPILINES",
+	"properties": {
+		"activities": [
+			{
+				"name": "API to BLOB",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "REST_API_TO_BLOB",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "BLOB to SQL",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "API to BLOB",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "BLOB_TO_SQL_DB",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2021-12-04T19:35:00Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

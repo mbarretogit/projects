@@ -1,0 +1,79 @@
+{
+	"name": "MASTER_RUN",
+	"properties": {
+		"activities": [
+			{
+				"name": "MASTER_RUN",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "MASTER",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Send Sucessfull Email",
+				"type": "WebActivity",
+				"dependsOn": [
+					{
+						"activity": "MASTER_RUN",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://etl-demo-logicapp.azurewebsites.net:443/api/etl-demo-logicapp-workflow/triggers/manual/invoke?api-version=2020-05-01-preview&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=4232LQPzqPGLHvc0kqDr5FKrurNY-1nAOQHbSn323II",
+					"method": "POST",
+					"body": {
+						"value": "{\n    \"title\": \"PIPELINE RUN FINISHED!\",\n    \"message\": \"ETL-DEMO PIPELINE RUNNING SUCCESSFULLY!\",\n    \"color\": \"Green\",\n    \"dataFactoryName\": \"@{pipeline().DataFactory}\",\n    \"pipelineName\": \"@{pipeline().Pipeline}\",\n    \"pipelineRunId\": \"@{pipeline().RunId}\",\n    \"time\": \"@{utcnow()}\"\n}",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "Send Failure Email",
+				"type": "WebActivity",
+				"dependsOn": [
+					{
+						"activity": "MASTER_RUN",
+						"dependencyConditions": [
+							"Failed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://etl-demo-logicapp.azurewebsites.net:443/api/etl-demo-logicapp-workflow/triggers/manual/invoke?api-version=2020-05-01-preview&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=4232LQPzqPGLHvc0kqDr5FKrurNY-1nAOQHbSn323II",
+					"method": "POST",
+					"body": {
+						"value": "{\n    \"title\": \"PIPELINE RUN FAILED!\",\n    \"message\": \"@{activity('MASTER_RUN').error.message}\",\n    \"color\": \"Red\",\n    \"dataFactoryName\": \"@{pipeline().DataFactory}\",\n    \"pipelineName\": \"@{pipeline().Pipeline}\",\n    \"pipelineRunId\": \"@{pipeline().RunId}\",\n    \"time\": \"@{utcnow()}\"\n}",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2021-12-04T20:12:55Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
